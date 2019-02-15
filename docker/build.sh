@@ -1,5 +1,5 @@
 #!/bin/sh
 
-. env.sh
+. ./env.sh
 
 docker build . -t $BINARY:latest
