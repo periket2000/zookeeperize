@@ -10,7 +10,11 @@ RUN echo " ... installing python and git ..." \
     && pip3 install virtualenv \
     && apk --update add git build-base \
     && rm -r /root/.cache \
-    && ln -s /usr/bin/python3 /usr/bin/python
+    && ln -s /usr/bin/python3 /usr/bin/python \
+    && apk del gcc g++ build-base make \
+    && rm -fr /usr/share /usr/libexec/gcc \
+    && rm -fr /var/cache/apk \
+    && find /usr/ -name '*pycache*' -exec rm -fr {} +;    
 
 ENV PROJECT_DIR /usr/local/pyenv
 RUN mkdir -p ${PROJECT_DIR}/conf
