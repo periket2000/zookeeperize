@@ -24,7 +24,7 @@ CLASSIFIERS = [
 INSTALL_REQUIRES = [
     'Flask==1.0.2',
     'flask-restplus==0.11.0',
-    'requests==2.19.1',
+    'requests==2.20.0',
     'kazoo==2.6.1'
 ]
 TEST_REQUIRE = [
